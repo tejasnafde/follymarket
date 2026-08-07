@@ -1,0 +1,12 @@
+name = "follymarket"
+main = "edge/worker.js"
+compatibility_date = "2026-07-01"
+
+[assets]
+directory = "web"
+binding = "ASSETS"
+
+# Workers custom domains create their own DNS record, unlike Pages ones.
+[[routes]]
+pattern = "follymarket.tn07.dev"
+custom_domain = true

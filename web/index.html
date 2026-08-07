@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#08080a">
+<title>Follymarket</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Folly">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header id="chrome" hidden>
+  <div class="bar">
+    <a class="logo" href="#/" style="text-decoration:none">folly<i>market</i></a>
+    <nav class="topnav">
+      <a href="#/" data-tab="/">Markets</a>
+      <a href="#/new" data-tab="/new">Create</a>
+      <a href="#/portfolio" data-tab="/portfolio">Portfolio</a>
+    </nav>
+    <div class="purse">
+      <span class="cash n" id="cash"></span>
+      <button class="av" id="signout" title="Sign out" style="border:0;padding:0;cursor:pointer"></button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap"><main id="view"><div class="empty"><div class="spin" style="margin:0 auto"></div></div></main></div>
+
+<nav class="tabbar" id="tabs" hidden>
+  <a href="#/" data-tab="/">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l5-6 4 3 5-8 4 5"/></svg>Markets
+  </a>
+  <a href="#/new" data-tab="/new">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 8.5v7M8.5 12h7"/></svg>Create
+  </a>
+  <a href="#/portfolio" data-tab="/portfolio">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5.5A1.5 1.5 0 0110.5 4h3A1.5 1.5 0 0115 5.5V7"/></svg>Portfolio
+  </a>
+</nav>
+
+<script type="module" src="/app.js"></script>
+</body>
+</html>
