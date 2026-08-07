@@ -1,0 +1,558 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Follymarket - design mock</title>
+<link rel="stylesheet" href="../web/style.css">
+</head>
+<body>
+
+<input type="radio" name="scr" id="s-login">
+<input type="radio" name="scr" id="s-feed" checked>
+<input type="radio" name="scr" id="s-mkt">
+<input type="radio" name="scr" id="s-new">
+<input type="radio" name="scr" id="s-port">
+<input type="radio" name="scr" id="s-act">
+
+<header>
+  <div class="bar">
+    <label class="logo" for="s-feed" title="Back to markets">folly<i>market</i></label>
+    <nav class="topnav">
+      <label for="s-feed">Markets</label>
+      <label for="s-mkt">Detail</label>
+      <label for="s-new">Create</label>
+      <label for="s-port">Portfolio</label>
+      <label for="s-act">Activity</label>
+    </nav>
+    <div class="purse">
+      <span class="cash n">₹<b>6,240</b></span>
+      <label class="av" for="s-login" title="Tejas - account and sign out"></label>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ==================== SIGN IN ==================== -->
+<section class="screen" id="login">
+  <div class="mark">f</div>
+  <h1>Follymarket</h1>
+  <p class="sm muted" style="margin-top:8px">
+    A private market on things your friends will probably do. Fake money, real consequences.
+  </p>
+
+  <label class="gbtn" for="s-feed" style="margin-top:24px" tabindex="0" role="button">
+    <svg viewBox="0 0 48 48" aria-hidden="true">
+      <path fill="#4285F4" d="M45 24c0-1.6-.1-2.7-.4-4H24v8h12c-.2 2-1.6 5-4 7l7 5c4-4 6-9.6 6-16z"/>
+      <path fill="#34A853" d="M24 46c5.9 0 10.9-2 14.5-5.3l-7-5.4C29.6 36.6 27 37.4 24 37.4c-5.8 0-10.7-3.8-12.5-9l-7.3 5.6C7.9 41.2 15.3 46 24 46z"/>
+      <path fill="#FBBC05" d="M11.5 28.4c-.5-1.4-.7-2.9-.7-4.4s.3-3 .7-4.4l-7.3-5.7C2.8 16.9 2 20.4 2 24s.8 7.1 2.2 10.1l7.3-5.7z"/>
+      <path fill="#EA4335" d="M24 10.6c3.2 0 6.1 1.1 8.4 3.3l6.3-6.3C34.9 4.1 29.9 2 24 2 15.3 2 7.9 6.8 4.2 13.9l7.3 5.7c1.8-5.2 6.7-9 12.5-9z"/>
+    </svg>
+    Continue with Google
+  </label>
+
+  <p class="xs faint" style="margin-top:14px">
+    Invite only. You choose your own stake, and top up whenever your judgement fails you.
+  </p>
+
+  <div class="card pad deny" style="margin-top:32px">
+    <span class="tag" style="color:var(--no)">Not on the list</span>
+    <p class="sm" style="margin-top:10px">
+      <b style="font-weight:560">rando@gmail.com</b> cannot enter.
+    </p>
+    <p class="xs faint" style="margin-top:6px">
+      Ask Tejas to add you. He can see every attempt.
+    </p>
+    <button class="btn sm" style="margin-top:12px">Sign out</button>
+  </div>
+</section>
+
+<!-- ==================== FEED ==================== -->
+<section class="screen" id="feed">
+  <div class="phead">
+    <div>
+      <h1>Goa, priced by the group</h1>
+      <p class="n">7 open &middot; ₹41,300 traded &middot; 11 players</p>
+    </div>
+    <div class="act"><button class="btn primary">New market</button></div>
+  </div>
+
+  <div class="rail">
+    <button class="chip" aria-pressed="true">Open</button>
+    <button class="chip" aria-pressed="false">Closing soon</button>
+    <button class="chip" aria-pressed="false">My positions</button>
+    <button class="chip" aria-pressed="false">Mine</button>
+    <button class="chip" aria-pressed="false">Resolved</button>
+  </div>
+
+  <div class="stack">
+
+    <article class="card mcard">
+      <div class="top">
+        <h3>Nihal gets too drunk before 9pm on night one</h3>
+        <div class="pc">
+          <b class="big">78%</b>
+          <span class="up n">+16</span>
+          <svg class="spark" width="96" height="26" viewBox="0 0 96 26" aria-hidden="true">
+            <path d="M1 19 L14 20 L27 15 L40 17 L53 11 L66 12 L79 6 L95 4"
+                  fill="none" stroke="#2ee6a8" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="track"><i style="width:78%"></i></div>
+      <div class="meta xs">
+        <span class="tag live"><i class="dot"></i>Open</span>
+        <span class="tag mine n">84 YES</span>
+        <span class="faint n">₹9,400 &middot; 11 comments</span>
+      </div>
+    </article>
+
+    <article class="card mcard">
+      <div class="top">
+        <h3>We miss the 6:40am flight home</h3>
+        <div class="pc">
+          <b class="big">31%</b>
+          <span class="down n">-9</span>
+          <svg class="spark" width="96" height="26" viewBox="0 0 96 26" aria-hidden="true">
+            <path d="M1 7 L14 5 L27 10 L40 8 L53 14 L66 13 L79 19 L95 21"
+                  fill="none" stroke="#ff5f70" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="track neg"><i style="width:31%"></i></div>
+      <div class="meta xs">
+        <span class="tag soon"><i class="dot"></i>Closes 4h</span>
+        <span class="faint n">₹6,100 &middot; 6 comments</span>
+      </div>
+    </article>
+
+    <article class="card mcard">
+      <div class="top">
+        <h3>Someone proposes a 3am beach swim and nobody joins</h3>
+        <div class="pc">
+          <b class="big">64%</b>
+          <span class="up n">+4</span>
+          <svg class="spark" width="96" height="26" viewBox="0 0 96 26" aria-hidden="true">
+            <path d="M1 16 L14 13 L27 17 L40 11 L53 14 L66 10 L79 12 L95 9"
+                  fill="none" stroke="#2ee6a8" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+      <div class="track"><i style="width:64%"></i></div>
+      <div class="meta xs">
+        <span class="tag live"><i class="dot"></i>Open</span>
+        <span class="faint n">₹3,050 &middot; 2 comments</span>
+      </div>
+    </article>
+
+    <article class="card mcard settled">
+      <div class="top">
+        <h3>Total trip spend crosses ₹40,000</h3>
+        <div class="pc">
+          <b class="big">YES</b>
+          <span class="up n">+₹1,180</span>
+        </div>
+      </div>
+      <div class="track dim"><i style="width:100%"></i></div>
+      <div class="meta xs">
+        <span class="tag done"><i class="dot"></i>Resolved</span>
+        <span class="faint">Aditi, 2 days ago</span>
+      </div>
+    </article>
+
+    <article class="card mcard settled">
+      <div class="top">
+        <h3>Rahul brings the speaker he promised</h3>
+        <div class="pc">
+          <b class="big faint">VOID</b>
+          <span class="faint n">₹300 back</span>
+        </div>
+      </div>
+      <div class="meta xs">
+        <span class="tag"><i class="dot"></i>Void</span>
+        <span class="faint">Plan changed, no longer resolvable</span>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ==================== MARKET DETAIL ==================== -->
+<section class="screen" id="mkt">
+  <div class="split">
+    <div class="stack" style="gap:12px">
+
+      <div class="card pad qhead">
+        <div class="meta xs" style="margin:0 0 11px">
+          <span class="tag live"><i class="dot"></i>Open</span>
+          <span class="tag">Manual close</span>
+        </div>
+        <h1>Nihal gets too drunk before 9pm on night one</h1>
+        <p class="sm muted" style="margin-top:9px">
+          Resolves YES if two or more people agree he was visibly done before 21:00 IST on day one.
+          Photos settle disputes.
+        </p>
+        <p class="xs faint" style="margin-top:9px">Tejas created this &middot; Tejas resolves it</p>
+
+        <div class="probrow">
+          <b class="big">78%</b>
+          <span class="d up n">+16 today</span>
+        </div>
+        <p class="xs faint n" style="margin-top:4px">₹9,400 traded &middot; 5 holders &middot; 23 trades</p>
+
+        <svg class="chart" viewBox="0 0 620 188" preserveAspectRatio="none"
+             role="img" aria-label="YES probability rose from 50 percent to 78 percent over three days">
+          <g stroke="#1c1c22" stroke-width="1" shape-rendering="crispEdges">
+            <line x1="0" y1="16"  x2="620" y2="16"/>
+            <line x1="0" y1="59"  x2="620" y2="59"/>
+            <line x1="0" y1="102" x2="620" y2="102"/>
+            <line x1="0" y1="145" x2="620" y2="145"/>
+          </g>
+          <path d="M0 102 C56 100 84 94 122 89 C160 84 190 96 228 76 C266 56 296 68 334 54
+                   C372 40 402 48 440 36 C478 24 512 33 556 28 C588 25 606 23 620 22"
+                fill="none" stroke="#2ee6a8" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+          <line x1="620" y1="0" x2="620" y2="188" stroke="#2ee6a8" stroke-opacity=".25" stroke-width="1"/>
+          <circle cx="620" cy="22" r="3.5" fill="#2ee6a8"/>
+        </svg>
+        <div class="xaxis xs faint">
+          <span>Fri</span><span>Sat</span><span>Sun</span><span>now</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="tabs">
+          <span class="on">Trades</span><span>Holders</span><span>Comments 11</span>
+        </div>
+        <div class="pad">
+          <table>
+            <thead>
+              <tr><th>Trader</th><th>Side</th><th>Spend</th><th class="hide-s">Move</th><th>When</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="who"><i class="pip">T</i>Tejas</span></td>
+                <td class="up" style="font-weight:560">YES</td>
+                <td class="n">₹500</td>
+                <td class="n muted hide-s">62 &rarr; 78</td>
+                <td class="faint">2m</td>
+              </tr>
+              <tr>
+                <td><span class="who"><i class="pip">A</i>Aditi</span></td>
+                <td class="down" style="font-weight:560">NO</td>
+                <td class="n">₹200</td>
+                <td class="n muted hide-s">69 &rarr; 62</td>
+                <td class="faint">14m</td>
+              </tr>
+              <tr>
+                <td><span class="who"><i class="pip">N</i>Nihal</span></td>
+                <td class="down" style="font-weight:560">NO</td>
+                <td class="n">₹1,000</td>
+                <td class="n muted hide-s">81 &rarr; 69</td>
+                <td class="faint">1h</td>
+              </tr>
+              <tr>
+                <td><span class="who"><i class="pip">R</i>Rahul</span></td>
+                <td class="up" style="font-weight:560">YES</td>
+                <td class="n">₹750</td>
+                <td class="n muted hide-s">64 &rarr; 81</td>
+                <td class="faint">3h</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <aside class="side">
+      <div class="card pad">
+        <div class="sides">
+          <button class="y on"><strong>YES</strong><small>₹0.78</small></button>
+          <button class="n"><strong>NO</strong><small>₹0.22</small></button>
+        </div>
+
+        <div style="margin-top:14px">
+          <label class="lbl" for="amt">You spend</label>
+          <input id="amt" class="amount" type="text" value="₹500" inputmode="numeric" aria-describedby="prev">
+          <div class="quick">
+            <button>100</button><button>500</button><button>1k</button><button>Max</button>
+          </div>
+        </div>
+
+        <div class="hr"></div>
+
+        <dl class="kv" id="prev">
+          <dt>Shares</dt><dd>571</dd>
+          <dt>Average price</dt><dd>₹0.87</dd>
+          <dt>Probability</dt><dd>78 &rarr; <span class="up">91%</span></dd>
+          <dt>Payout if YES</dt><dd class="hero up">₹571</dd>
+          <dt>Max loss</dt><dd class="hero">₹500</dd>
+        </dl>
+
+        <button class="btn primary full" style="margin-top:14px">Buy YES</button>
+        <p class="xs faint" style="margin-top:10px">
+          This trade moves the market 13 points. Cash left ₹5,740.
+        </p>
+      </div>
+
+      <div class="card pad">
+        <div class="rowb">
+          <span class="lbl" style="margin:0">Your position</span>
+          <span class="tag mine">YES</span>
+        </div>
+        <dl class="kv" style="margin-top:12px">
+          <dt>Shares</dt><dd>84</dd>
+          <dt>Spent</dt><dd>₹60</dd>
+          <dt>Value now</dt><dd>₹65.5</dd>
+          <dt>Unrealised</dt><dd class="up">+₹5.50</dd>
+        </dl>
+      </div>
+
+      <div class="card pad">
+        <span class="lbl">Resolver</span>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <button class="btn">Close</button>
+          <button class="btn">Void</button>
+        </div>
+        <p class="xs faint" style="margin-top:10px">Resolve unlocks after close. Every action is logged with a note.</p>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ==================== CREATE ==================== -->
+<section class="screen" id="new">
+  <div class="phead">
+    <div>
+      <h1>New market</h1>
+      <p>Ask something the group can actually settle.</p>
+    </div>
+  </div>
+
+  <div class="split">
+    <div class="card pad stack" style="gap:16px">
+      <div class="field">
+        <label class="lbl" for="q">Question</label>
+        <input id="q" type="text" value="Nihal gets too drunk before 9pm on night one">
+      </div>
+
+      <div class="field">
+        <label class="lbl" for="d">How it resolves</label>
+        <textarea id="d">Resolves YES if two or more people agree he was visibly done before 21:00 IST on day one.</textarea>
+      </div>
+
+      <div class="two">
+        <div class="field">
+          <label class="lbl" for="cat">Category</label>
+          <select id="cat"><option>Chaos</option><option>Logistics</option><option>Money</option><option>Romance</option></select>
+        </div>
+        <div class="field">
+          <label class="lbl" for="p0">Starting probability</label>
+          <input id="p0" type="number" value="50" min="1" max="99">
+        </div>
+      </div>
+      <p class="xs faint" style="margin-top:-6px">
+        Prices swing hard here. One ₹100 YES buy takes a 50% market to about 70%.
+      </p>
+
+      <div class="field">
+        <span class="lbl">Trading closes</span>
+        <input type="radio" name="cmode" id="cm-man" checked>
+        <input type="radio" name="cmode" id="cm-time">
+        <div class="seg">
+          <label for="cm-man"><strong>When I close it</strong><small>Manual</small></label>
+          <label for="cm-time"><strong>At a set time</strong><small>Automatic</small></label>
+        </div>
+        <div class="closeat">
+          <label class="lbl" for="ca">Closes at</label>
+          <input id="ca" type="datetime-local" value="2026-08-09T21:00">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="lbl" for="rv">Resolver</label>
+        <select id="rv"><option>Tejas (me)</option><option>Aditi (admin)</option></select>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+        <button class="btn">Cancel</button>
+        <button class="btn primary">Create market</button>
+      </div>
+      <p class="xs faint">The group sees the question, your name and the starting probability.</p>
+    </div>
+
+    <aside class="side">
+      <div class="card pad">
+        <span class="lbl">Preview</span>
+        <div class="mcard" style="padding:0">
+          <div class="top">
+            <h3>Nihal gets too drunk before 9pm on night one</h3>
+            <div class="pc"><b class="big">50%</b></div>
+          </div>
+          <div class="track"><i style="width:50%"></i></div>
+          <div class="meta xs">
+            <span class="tag live"><i class="dot"></i>Open</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ==================== PORTFOLIO ==================== -->
+<section class="screen" id="port">
+  <div class="phead">
+    <div>
+      <h1>Portfolio</h1>
+      <p>Fake money. Real reputation.</p>
+    </div>
+    <div class="act"><button class="btn sm">Export ledger CSV</button></div>
+  </div>
+
+  <div class="stats">
+    <div class="card pad stat"><span class="lbl" style="margin:0">Cash</span><b class="big">₹6,240</b></div>
+    <div class="card pad stat"><span class="lbl" style="margin:0">Positions</span><b class="big">₹4,910</b></div>
+    <div class="card pad stat"><span class="lbl" style="margin:0">Unrealised</span><b class="big up">+₹1,150</b></div>
+    <div class="card pad stat"><span class="lbl" style="margin:0">Settled</span><b class="big up">+₹1,180</b></div>
+  </div>
+
+  <div class="card pad" style="margin-bottom:12px">
+    <span class="lbl">Open positions</span>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+            <div>Nihal drunk before 9pm</div>
+            <div class="xs faint n">84 YES &middot; spent ₹60</div>
+          </td>
+          <td>
+            <div class="n">₹65</div>
+            <div class="xs up n">+₹5</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>We miss the 6:40am flight</div>
+            <div class="xs faint n">1,420 NO &middot; spent ₹800</div>
+          </td>
+          <td>
+            <div class="n">₹980</div>
+            <div class="xs up n">+₹180</div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div>3am beach swim, nobody joins</div>
+            <div class="xs faint n">610 YES &middot; spent ₹500</div>
+          </td>
+          <td>
+            <div class="n">₹390</div>
+            <div class="xs down n">-₹110</div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card pad">
+    <span class="lbl">Ledger</span>
+    <table>
+      <tbody>
+        <tr><td>Buy YES, Nihal drunk before 9pm</td><td class="n down">-₹500</td></tr>
+        <tr><td>Resolved YES, spend over ₹40,000</td><td class="n up">+₹1,180</td></tr>
+        <tr><td>Void refund, Rahul's speaker</td><td class="n up">+₹300</td></tr>
+        <tr><td>Starting balance</td><td class="n muted">+₹10,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ==================== ACTIVITY ==================== -->
+<section class="screen" id="act">
+  <div class="phead">
+    <div>
+      <h1>Activity</h1>
+      <p>Everything that happened, newest first.</p>
+    </div>
+  </div>
+
+  <div class="card pad">
+    <ol class="feed">
+      <li>
+        <span class="ico up">&uarr;</span>
+        <div>
+          <div class="sm"><b>Tejas</b> bought <b class="up">₹500 YES</b> on <b>Nihal drunk before 9pm</b></div>
+          <div class="xs faint n">62 &rarr; 78%, biggest move today</div>
+        </div>
+        <span class="xs faint">2m</span>
+      </li>
+      <li>
+        <span class="ico" style="color:var(--amber)">!</span>
+        <div>
+          <div class="sm"><b>We miss the 6:40am flight</b> closes in 4 hours</div>
+          <div class="xs faint">Automatic close at 05:00 IST</div>
+        </div>
+        <span class="xs faint">1h</span>
+      </li>
+      <li>
+        <span class="ico">"</span>
+        <div>
+          <div class="sm"><b>Aditi</b> commented on <b>3am beach swim</b></div>
+          <div class="xs faint">"I am buying NO purely out of self respect"</div>
+        </div>
+        <span class="xs faint">3h</span>
+      </li>
+      <li>
+        <span class="ico" style="color:var(--violet)">&check;</span>
+        <div>
+          <div class="sm"><b>Aditi</b> resolved <b>spend over ₹40,000</b> as YES</div>
+          <div class="xs faint n">"Receipts came to ₹43,180." 4 payouts credited</div>
+        </div>
+        <span class="xs faint">2d</span>
+      </li>
+      <li>
+        <span class="ico">+</span>
+        <div>
+          <div class="sm"><b>Rahul</b> joined with ₹10,000</div>
+          <div class="xs faint">Allowlisted by Tejas</div>
+        </div>
+        <span class="xs faint">5d</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+</div>
+
+<!-- phone-only sticky trade CTA, market screen only -->
+<div class="buybar">
+  <button class="y">Buy YES ₹0.78</button>
+  <button class="n">Buy NO ₹0.22</button>
+</div>
+
+<nav class="tabbar">
+  <label for="s-feed">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l5-6 4 3 5-8 4 5"/></svg>
+    Markets
+  </label>
+  <label for="s-mkt">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h6"/></svg>
+    Market
+  </label>
+  <label for="s-new">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 8.5v7M8.5 12h7"/></svg>
+    Create
+  </label>
+  <label for="s-port">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5.5A1.5 1.5 0 0110.5 4h3A1.5 1.5 0 0115 5.5V7"/></svg>
+    Portfolio
+  </label>
+  <label for="s-act">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h4l2.5 6 5-13 2.5 7h4"/></svg>
+    Activity
+  </label>
+</nav>
+
+</body>
+</html>
