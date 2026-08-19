@@ -16,12 +16,13 @@ from datetime import datetime, timezone
 
 import firebase_admin
 import requests
-from fastapi import Depends, FastAPI, HTTPException, Header, Request
+from fastapi import BackgroundTasks, Depends, FastAPI, HTTPException, Header, Request
 from fastapi.responses import StreamingResponse
 from firebase_admin import auth as fb_auth, firestore
 from pydantic import BaseModel, Field
 
 import lmsr
+from product_analytics import track_product_event
 import push
 
 # Everyone starts empty and chooses their own stake. The first top-up IS that
@@ -404,7 +405,7 @@ def preview(body: Trade, user: dict = Depends(allowed)):
 
 
 @app.post("/api/trades")
-def trade(body: Trade, user: dict = Depends(allowed)):
+def trade(body: Trade, background_tasks: BackgroundTasks, user: dict = Depends(allowed)):
     if body.side not in ("yes", "no"):
         raise HTTPException(400, "side must be yes or no")
     mref = db.collection(M).document(body.market)
@@ -465,6 +466,7 @@ def trade(body: Trade, user: dict = Depends(allowed)):
         tell_discord("%s bought %s %.0f on \"%s\"\n%d%% to %d%%"
                      % (user["name"], body.side.upper(), body.amount, question,
                         round(100 * q["prob_before"]), round(100 * q["prob_after"])))
+    background_tasks.add_task(track_product_event, "trade_completed", "trade")
     return q
 
 
@@ -631,7 +633,7 @@ class TopUp(BaseModel):
 
 
 @app.post("/api/topup")
-def topup(body: TopUp, user: dict = Depends(allowed)):
+def topup(body: TopUp, background_tasks: BackgroundTasks, user: dict = Depends(allowed)):
     """Print yourself money. Fake money, so the only control that matters is that
     everyone can see you did it: it goes to the ledger and to Discord, and the
     portfolio scores you on cash plus positions MINUS what you put in."""
@@ -655,6 +657,7 @@ def topup(body: TopUp, user: dict = Depends(allowed)):
     cash, deposited = run(db.transaction())
     tell_discord("%s topped up %.0f, %.0f in total"
                  % (user["name"], body.amount, deposited))
+    background_tasks.add_task(track_product_event, "top_up_completed", "wallet")
     return {"cash": cash, "deposited": deposited}
 
 
