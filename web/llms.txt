@@ -1,0 +1,7 @@
+# Follymarket
+
+> A private friend-group prediction market that uses play money and live market prices.
+
+## Canonical resources
+
+- [Open Follymarket](https://follymarket.tn07.dev/)

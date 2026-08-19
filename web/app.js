@@ -2,6 +2,10 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebas
 import { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect,
   getRedirectResult, signOut, onAuthStateChanged }
   from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+import {
+  authSignInCompleted,
+  marketDetailOpened,
+} from "./analytics.js";
 
 // Public config. The API key identifies the project, it does not authorise anything.
 const fb = initializeApp({
@@ -428,6 +432,7 @@ let side = "yes";
 
 async function detail(id, poll) {
   const m = await api("/markets/" + id);
+  if (!poll) marketDetailOpened();
   const sig = JSON.stringify(m);
   if (poll && seen.mkt === sig) return;
   seen.mkt = sig;
@@ -805,5 +810,6 @@ onAuthStateChanged(auth, async (user) => {
     return;
   }
   if (me.status !== "allowed") { renderLogin(me.email); return; }
+  authSignInCompleted();
   start();
 });
