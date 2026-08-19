@@ -14,6 +14,7 @@ test("Follymarket publishes canonical metadata and discovery files", async () =>
   assert.match(html, /rel="canonical" href="https:\/\/follymarket\.tn07\.dev\/"/);
   assert.match(html, /property="og:title"/);
   assert.match(html, /name="twitter:card" content="summary"/);
+  assert.match(html, /d390e41a9e9545beaf4da6aa1399b8b9/);
   assert.match(robots, /User-agent: GPTBot\nDisallow: \//);
   assert.match(robots, /Sitemap: https:\/\/follymarket\.tn07\.dev\/sitemap\.xml/);
   assert.match(llms, /^# Follymarket$/m);
