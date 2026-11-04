@@ -7,7 +7,13 @@ Auth: Firebase ID token in `Authorization: Bearer`. Access: an email must be in
 folly_allowlist, except FOLLY_ADMIN_EMAIL which admits itself on first login.
 """
 
-import csv
+# Expand the FOLLYMARKET_CONFIG secret blob before anything reads os.environ
+# (push.py reads FOLLY_VAPID_PRIVATE_PEM at import).
+from config_blob import load_config_blob
+
+load_config_blob()
+
+import csv  # noqa: E402
 import io
 import json
 import logging

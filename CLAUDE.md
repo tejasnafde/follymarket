@@ -23,15 +23,21 @@ every project inherits the fix.
 | API | Cloud Run `follymarket-api`, `asia-south1`, project `teejayproject` |
 | Data | Firestore `(default)` in `teejayproject`, collections prefixed `folly_` |
 | Auth | Firebase Auth, Google provider, web app `follymarket` |
-| Discord alerts | secret `FOLLYMARKET_DISCORD_WEBHOOK`, injected as `FOLLY_DISCORD_WEBHOOK` |
+| Secrets | one JSON secret `follymarket-config` (keys `FOLLY_DISCORD_WEBHOOK`, `FOLLY_VAPID_PRIVATE_PEM`), injected as `FOLLYMARKET_CONFIG` and expanded by `api/config_blob.py` (since 2026-11-04) |
 
 Deploy, both idempotent, no CI:
 
 ```sh
 npx wrangler deploy                        # frontend + edge, from the repo root
 cd api && gcloud --configuration=personal run deploy follymarket-api \
-  --project teejayproject --region asia-south1 --source . --allow-unauthenticated
+  --project teejayproject --region asia-south1 --source . --allow-unauthenticated \
+  --set-secrets=FOLLYMARKET_CONFIG=follymarket-config:latest
 ```
+
+`--set-secrets` (not `--update-secrets`) replaces every secret ref, so the old
+per-value refs detach. Plain env vars (`FOLLY_ADMIN_EMAIL`, `FOLLY_JOIN_CODE`,
+`FOLLY_VAPID_PUBLIC`, ...) are not in the command and carry over from the live
+service. On Cloud Run the API refuses to start without `FOLLYMARKET_CONFIG`.
 
 **One thing is not done: the Google sign-in provider is not enabled yet.** Until
 someone clicks it on in the Firebase console (Authentication > Sign-in method >
